@@ -110,6 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorTicking = true;
         }
     });
+    // --- Efecto 3D Tilt ---
+    VanillaTilt.init(document.querySelectorAll(".project-card, .hero"), {
+        max: 10,     // Inclinación máxima
+        speed: 400,  // Velocidad
+        glare: true, // Añade un reflejo
+    "   max-glare": 0.2 // Intensidad del reflejo
+    });
 
     // 2. Efecto Botones Magnéticos
     const magneticButtons = document.querySelectorAll('[data-magnetic]');
