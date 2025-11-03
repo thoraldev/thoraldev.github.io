@@ -26,11 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollIndicator.style.width = scrolled + '%';
     });
 
-    // Download function (Simulación)
-    function downloadProject(filename) {
-        // ... (tu lógica de descarga) ...
-    }
-
     // Smooth reveal on scroll (IntersectionObserver)
     const observerOptions = {
         threshold: 0.1,
@@ -41,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                // CAMBIO: Des-observamos el elemento una vez que es visible
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -53,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let parallaxTicking = false;
     function applyHeroParallax() {
         const scrolled = window.scrollY;
-        heroSection.style.transform = `translateY(${scrolled * 0.1}px)`;
+        // CAMBIO: Reducimos el efecto parallax para que no sea tan extremo
+        heroSection.style.transform = `translateY(${scrolled * 0.15}px)`;
         parallaxTicking = false;
     }
     window.addEventListener('scroll', () => {
@@ -96,9 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorGlow = document.getElementById('cursor-glow');
     let cursorTicking = false;
     
-    // 1. Efecto Cursor Glow (optimizado con rAF)
     function updateCursorGlow(e) {
-        if (cursorGlow) { // Verifica si el elemento existe
+        if (cursorGlow) { 
             cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
         }
         cursorTicking = false;
@@ -110,15 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorTicking = true;
         }
     });
-    // --- Efecto 3D Tilt ---
-    VanillaTilt.init(document.querySelectorAll(".project-card, .hero"), {
-        max: 10,     // Inclinación máxima
-        speed: 400,  // Velocidad
-        glare: true, // Añade un reflejo
-    "   max-glare": 0.2 // Intensidad del reflejo
-    });
 
-    // 2. Efecto Botones Magnéticos
     const magneticButtons = document.querySelectorAll('[data-magnetic]');
     const magneticStrength = 0.4; 
 
@@ -143,6 +132,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 innerEl.style.transform = 'translate(0, 0)';
             }
         });
+    });
+
+    // --- NUEVO: Efecto 3D Tilt ---
+    // Selecciona todos los elementos que marcamos con 'data-tilt' en el HTML
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+        max: 15,     // Inclinación máxima (puedes jugar con este valor)
+        speed: 400,  // Velocidad de la animación
+        glare: true, // Añade un reflejo "brillante"
+        "max-glare": 0.25 // Intensidad del reflejo
     });
 
 }); // Fin del DOMContentLoaded
