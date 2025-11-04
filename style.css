@@ -317,6 +317,7 @@ header {
 .project-image-container {
     position: relative;
     overflow: hidden;
+    object-fit:contain;
     height: 180px;
     background: var(--bg-secondary);
     z-index: 1;
