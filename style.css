@@ -9,10 +9,10 @@
     --bg-secondary: #0a0a0a;
     --text-primary: #ffffff;
     --text-secondary: #9E9E9E; 
-    --accent: #007aff;
+    --accent: #316399;
     --accent-secondary: #5856d6;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.121);
+    --glass-border: rgba(255, 255, 255, 0.147);
     --shadow: rgba(0, 0, 0, 0.5);
 }
 
@@ -21,11 +21,11 @@
     --bg-secondary: #ffffff;
     --text-primary: #000000;
     --text-secondary: #707070;
-    --accent: #007aff;
+    --accent: #5856d6;
     --accent-secondary: #5856d6;
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(0, 0, 0, 0.1);
-    --shadow: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.121);
+    --glass-border: rgba(0, 0, 0, 0.147);
+    --shadow: rgba(0, 0, 0, 0.5);
 }
 
 html {
@@ -44,7 +44,7 @@ body {
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* cursor: none; */
+    cursor: auto;
 }
 
 /* ... (El resto de tu CSS sigue exactamente igual) ... */
@@ -57,9 +57,9 @@ body::before {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(0, 122, 255, 0.3) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(88, 86, 214, 0.3) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(255, 45, 85, 0.2) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(0, 123, 255, 0.332) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(88, 86, 214, 0.341) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255, 45, 83, 0.384) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0; 
     animation: morphing 20s ease-in-out infinite;
@@ -83,7 +83,7 @@ body::before {
 }
 
 [data-theme="light"] #cursor-glow {
-    background: radial-gradient(circle, rgba(0, 122, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 106, 255, 0.259) 0%, transparent 70%);
     filter: blur(80px);
 }
 
@@ -122,7 +122,7 @@ header {
 }
 
 .logo:hover {
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 .theme-toggle {
@@ -179,7 +179,7 @@ header {
     inset: 0;
     background: radial-gradient(circle at 30% 30%, rgba(0, 122, 255, 0.1), transparent 60%);
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 10.5s ease;
     
     /* NUEVO: Para el efecto 3D Tilt */
     transform: translateZ(20px);
@@ -195,8 +195,8 @@ header {
 }
 
 .hero-image {
-    width: 120px;
-    height: 120px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 8px 24px var(--shadow);
@@ -276,8 +276,8 @@ header {
 
 .project-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     border: 0.5px solid var(--glass-border);
     border-radius: 16px;
     overflow: hidden;
@@ -315,7 +315,7 @@ header {
 }
 
 .project-image-container {
-    position: relative;
+    
     overflow: hidden;
     object-fit:contain;
     height: 180px;
@@ -334,7 +334,7 @@ header {
 }
 
 .project-card:hover .project-image {
-    transform: scale(1.08);
+    transform: scale(1.2);
 }
 
 .project-info {
@@ -466,8 +466,8 @@ footer {
     }
 
     .hero-image {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .hero-content h1 {
@@ -512,7 +512,7 @@ footer {
    Puedes volver a ponerla si lo prefieres, pero puede ser "demasiado".
 */
 .hero {
-    /* animation: fadeInUp 0.6s ease; */
+    animation: fadeInUp 0.6s ease; */
 }
 
 .project-card {
