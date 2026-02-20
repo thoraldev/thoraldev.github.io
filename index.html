@@ -1,124 +1,134 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thoral - Alejandro Toral</title>
-    
-    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
-    
-    <meta property="og:title" content="Alejandro Toral - Desarrollador Full Stack (ThoralDev)">
-    <meta property="og:description" content="Desarrollador Full Stack apasionado por crear experiencias digitales excepcionales.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thoraldev.github.io/"> 
-    <meta property="og:image" content="https://thoraldev.github.io/social-preview.png"> <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alejandro Toral - Desarrollador Full Stack (ThoralDev)">
-    <meta name="twitter:description" content="Desarrollador Full Stack apasionado por crear experiencias digitales excepcionales.">
-    <meta name="twitter:image" content="https://thoraldev.github.io/social-preview.png"> <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-    <div id="cursor-glow"></div>
-    <div class="scroll-indicator"></div>
+    <title>Alejandro Toral</title>
+    <meta name="description" content="Alejandro Toral. Desarrollador Full Stack.">
 
-    <div class="container">
-        <header>
-            <a href="#" class="logo">Thoral 👾</a>
-            <button class="theme-toggle" id="themeToggle" data-magnetic>
-                <i class="fas fa-moon"></i>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thoraldev.github.io/">
+    <meta property="og:title" content="Alejandro Toral">
+    <meta property="og:description" content="Portafolio minimalista.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="layout">
+        <header class="site-header">
+            <a href="/" class="logo">thoral.dev</a>
+            <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
+                <i id="theme-icon" class="fas fa-sun"></i>
             </button>
         </header>
 
-        <section class="hero" data-tilt>
-            <img src="https://avatars.githubusercontent.com/u/238809232?v=4" alt="Foto de perfil" class="hero-image">
-            <div class="hero-content">
-                <h1>Alejandro Toral</h1>
-                <p>Desarrollador Full Stack apasionado por crear experiencias digitales excepcionales. Especializado en tecnologías modernas y diseño minimalista.</p>
-                <div class="contact-links">
-                    <a href="https://github.com/thoraldev" class="contact-btn" target="_blank" data-magnetic>
+        <main>
+            <section class="hero">
+                <div class="profile-container">
+                    <img src="https://avatars.githubusercontent.com/u/238809232?v=4" alt="Profile" class="profile-img">
+                </div>
+                <p class="greeting">> Hola, mundo. Soy Alejandro.</p>
+                <h1 class="title">Full Stack Developer_</h1>
+                <p class="bio">
+                    Especializado en construir soluciones robustas y escalables.
+                    Enfocado en código limpio, arquitectura y resolución de problemas complejos.
+                </p>
+
+                <div class="terminal-card fade-in-section">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="terminal-body">
+                        <code>
+                            <span class="prompt">~/thoral.dev</span><br>
+                            ├── <a href="#bio">about</a><br>
+                            ├── <a href="#proyectos">projects</a><br>
+                            │&nbsp;&nbsp;&nbsp;├── system_reg<br>
+                            │&nbsp;&nbsp;&nbsp;├── auto_script<br>
+                            │&nbsp;&nbsp;&nbsp;└── portfolio<br>
+                            └── <a href="mailto:thoraldev@gmail.com">contact</a>
+                        </code>
+                    </div>
+                </div>
+
+                <nav class="links">
+                    <a href="cv.pdf" target="_blank" rel="noopener noreferrer" aria-label="CV">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                    <a href="https://github.com/thoraldev" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
                         <i class="fab fa-github"></i>
-                        <span>GitHub</span>
                     </a>
-                    <a href="https://linkedin.com/in/tu-usuario" class="contact-btn" target="_blank" data-magnetic> <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="mailto:thoraldev@gmail.com" class="contact-btn" data-magnetic>
+                    <a href="mailto:thoraldev@gmail.com" aria-label="Email">
                         <i class="fas fa-envelope"></i>
-                        <span>Email</span>
                     </a>
-                    <a href="https://wa.me/123456789" class="contact-btn" target="_blank" data-magnetic> <i class="fab fa-whatsapp"></i>
-                        <span>Whatsapp</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+                </nav>
+            </section>
 
-        <h2 class="section-title">Proyectos</h2>
-        
-        <div class="projects-grid">
-            <div class="project-card" data-tilt>
-                <div class="project-image-container">
-                    <img src="https://raw.githubusercontent.com/thoraldev/modulo-registro-usuarios/refs/heads/main/Recursos/Formulario.png" alt="Vista previa del proyecto 1" class="project-image"> </div>
-                <div class="project-info">
-                    <h3>Formulario de Registro C#</h3> <p>Aplicación de escritorio en C# WinForms para registro y gestión de usuarios, conectada a SQL Server.</p> <div class="project-tags">
-                        <span class="tag">C#</span>
-                        <span class="tag">WinForms</span>
-                        <span class="tag">SQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-btn" target="_blank" data-magnetic><i class="fas fa-eye"></i> Demo</a>
-                        <a href="#" class="project-btn github" target="_blank" data-magnetic><i class="fab fa-github"></i> Código</a>
-                    </div>
-                </div>
-            </div>
+            <section id="proyectos" class="projects">
+                <h2 class="section-title">## Proyectos</h2>
+                <div class="grid">
+                    <article class="card">
+                        <header>
+                            <h3>01. Sistema de Registro</h3>
+                        </header>
+                        <p>Gestión integral de usuarios con base de datos. Arquitectura en capas para mayor
+                            escalabilidad.</p>
+                        <footer>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </footer>
+                    </article>
 
-            <div class="project-card" data-tilt>
-                <div class="project-image-container">
-                    <img src="./ruta/a/tu/imagen-proyecto-2.png" alt="Vista previa del proyecto 2" class="project-image"> </div>
-                <div class="project-info">
-                    <h3>Script .BAT Automatización</h3> <p>Script de batch para automatizar copias de seguridad de carpetas y limpieza de archivos temporales en Windows.</p> <div class="project-tags">
-                        <span class="tag">Batch</span>
-                        <span class="tag">Windows</span>
-                        <span class="tag">Scripting</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-btn" target="_blank" data-magnetic><i class="fas fa-eye"></i> Demo</a>
-                        <a href="#" class="project-btn github" target="_blank" data-magnetic><i class="fab fa-github"></i> Código</a>
-                    </div>
-                </div>
-            </div>
+                    <article class="card">
+                        <header>
+                            <h3>02. Script Automatización</h3>
+                        </header>
+                        <p>Herramientas de mantenimiento y backup automatizado para optimizar flujos de trabajo.</p>
+                        <footer>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </footer>
+                    </article>
 
-            <div class="project-card" data-tilt>
-                <div class="project-image-container">
-                    <img src="./ruta/a/tu/imagen-proyecto-3.png" alt="Vista previa del proyecto 3" class="project-image"> </div>
-                <div class="project-info">
-                    <h3>Mi Portafolio Web</h3> <p>Página personal de portafolio (¡esta misma!) construida con HTML, CSS y JavaScript vainilla, con un diseño glassmorphism.</p> <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-btn" target="_blank" data-magnetic><i class="fas fa-eye"></i> Demo</a>
-                        <a href="#" class="project-btn github" target="_blank" data-magnetic><i class="fab fa-github"></i> Código</a>
-                    </div>
+                    <article class="card">
+                        <header>
+                            <h3>03. Portafolio Web</h3>
+                        </header>
+                        <p>Sitio web minimalista, semántico y accesible. Diseño enfocado en el contenido.</p>
+                        <footer>
+                            <a href="https://github.com/thoraldev/thoraldev.github.io" target="_blank"
+                                rel="noopener noreferrer" aria-label="Ver código">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </footer>
+                    </article>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
-        <footer>
-            <p>&copy; 2025 ThoralDev. Open source everything.</p>
+        <footer class="site-footer">
+            <p>© 2025 Alejandro Toral.</p>
         </footer>
     </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-
-    <script src="script.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
