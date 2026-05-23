@@ -3,20 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alejandro Toral</title>
-    <meta name="description" content="Alejandro Toral. Desarrollador Full Stack.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)">
+
+    <title>Alejandro Toral — Full Stack Developer</title>
+    <meta name="description" content="Alejandro Toral. Desarrollador Full Stack. Soluciones robustas, escalables y código limpio.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thoraldev.github.io/">
-    <meta property="og:title" content="Alejandro Toral">
-    <meta property="og:description" content="Portafolio minimalista.">
+    <meta property="og:title" content="Alejandro Toral — Full Stack Developer">
+    <meta property="og:description" content="Portafolio minimalista. Código limpio. Soluciones escalables.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -26,96 +36,210 @@
 </head>
 
 <body>
+    <!-- Loading curtain -->
+    <div class="loader" aria-hidden="true">
+        <div class="loader-bar"></div>
+        <div class="loader-text"><span>thoral</span>.<span>dev</span></div>
+    </div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Texturas globales -->
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <!-- Cursor personalizado (oculto en touch) -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
     <div class="layout">
         <header class="site-header">
-            <a href="/" class="logo">thoral.dev</a>
-            <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
-                <i id="theme-icon" class="fas fa-sun"></i>
-            </button>
+            <a href="/" class="logo" aria-label="Inicio">
+                <span class="logo-prompt">$</span>
+                <span class="logo-text">thoral.dev</span>
+            </a>
+            <div class="header-right">
+                <span class="status" aria-label="Estado: disponible">
+                    <span class="status-dot"></span>
+                    <span class="status-text">disponible</span>
+                </span>
+                <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
+                    <i id="theme-icon" class="fas fa-sun"></i>
+                </button>
+            </div>
         </header>
 
         <main>
             <section class="hero">
-                <div class="profile-container">
-                    <img src="https://avatars.githubusercontent.com/u/238809232?v=4" alt="Profile" class="profile-img">
+                <div class="profile-container" data-reveal data-delay="0">
+                    <div class="profile-ring" aria-hidden="true"></div>
+                    <img
+                        src="https://avatars.githubusercontent.com/u/238809232?v=4"
+                        alt="Alejandro Toral"
+                        class="profile-img"
+                        loading="eager"
+                        decoding="async">
+                    <div class="profile-glow" aria-hidden="true"></div>
                 </div>
-                <p class="greeting">> Hola, mundo. Soy Alejandro.</p>
-                <h1 class="title">Full Stack Developer_</h1>
-                <p class="bio">
-                    Especializado en construir soluciones robustas y escalables.
+
+                <p class="greeting" data-reveal data-delay="1">
+                    <span class="prompt-symbol">&gt;</span>
+                    <span>Hola, mundo. Soy Alejandro.</span>
+                </p>
+
+                <h1 class="title" data-reveal data-delay="2">
+                    <span class="title-text" data-text="Full Stack Developer" aria-label="Full Stack Developer">Full Stack Developer</span><span class="title-cursor" aria-hidden="true">_</span>
+                </h1>
+
+                <p class="bio" data-reveal data-delay="3">
+                    Especializado en construir <em>soluciones robustas y escalables</em>.
                     Enfocado en código limpio, arquitectura y resolución de problemas complejos.
                 </p>
 
-                <div class="terminal-card fade-in-section">
+                <div class="terminal-card" data-reveal data-delay="4">
                     <div class="terminal-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
+                        <span class="dot red" aria-hidden="true"></span>
+                        <span class="dot yellow" aria-hidden="true"></span>
+                        <span class="dot green" aria-hidden="true"></span>
+                        <span class="terminal-title">~ — zsh — 80×24</span>
                     </div>
                     <div class="terminal-body">
-                        <code>
-                            <span class="prompt">~/thoral.dev</span><br>
-                            ├── <a href="#bio">about</a><br>
-                            ├── <a href="#proyectos">projects</a><br>
-                            │&nbsp;&nbsp;&nbsp;├── system_finanzas<br>
-                            │&nbsp;&nbsp;&nbsp;├── auto_script<br>
-                            │&nbsp;&nbsp;&nbsp;└── portfolio<br>
-                            └── <a href="mailto:thoraldev@gmail.com">contact</a>
-                        </code>
+                        <div class="terminal-line">
+                            <span class="prompt">alejandro@thoral.dev</span><span class="separator">:</span><span class="path">~</span><span class="separator">$</span> <span class="command">tree ./portfolio</span>
+                        </div>
+                        <pre class="tree"><span class="folder">~/thoral.dev</span>
+├── <a href="#bio" class="tree-link">about</a>
+├── <a href="#proyectos" class="tree-link">projects</a>
+│&nbsp;&nbsp;&nbsp;├── <span class="file">system_finanzas</span>
+│&nbsp;&nbsp;&nbsp;├── <span class="file">auto_script</span>
+│&nbsp;&nbsp;&nbsp;└── <span class="file">portfolio</span>
+└── <a href="mailto:thoraldev@gmail.com" class="tree-link">contact</a></pre>
                     </div>
                 </div>
 
-                <nav class="links">
-                    <a href="cv.pdf" target="_blank" rel="noopener noreferrer" aria-label="CV">
-                        <i class="fas fa-file-pdf"></i>
+                <nav class="links" data-reveal data-delay="5" aria-label="Enlaces principales">
+                    <a href="cv.pdf" target="_blank" rel="noopener noreferrer" class="link-item" data-magnetic>
+                        <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                        <span class="link-label">cv.pdf</span>
                     </a>
-                    <a href="https://github.com/thoraldev" target="_blank" rel="noopener noreferrer"
-                        aria-label="GitHub">
-                        <i class="fab fa-github"></i>
+                    <a href="https://github.com/thoraldev" target="_blank" rel="noopener noreferrer" class="link-item" data-magnetic>
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span class="link-label">github</span>
                     </a>
-                    <a href="mailto:thoraldev@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
+                    <a href="mailto:thoraldev@gmail.com" class="link-item" data-magnetic>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span class="link-label">email</span>
                     </a>
                 </nav>
             </section>
 
-            <section id="proyectos" class="projects">
-                <h2 class="section-title">## Proyectos</h2>
-                <div class="grid">
-                    <article class="card">
-                        <header>
-                            <h3>01. Sistema de Finanzas persobales</h3>
+            <section id="bio" class="about" data-reveal>
+                <h2 class="section-title">
+                    <span class="hash">##</span>
+                    <span>Sobre mí</span>
+                </h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            Construyo software con la disciplina de un artesano y la
+                            curiosidad de un investigador. Me interesa la <em>arquitectura</em>,
+                            la <em>experiencia de usuario</em> y todo lo que se encuentra entre
+                            el código y las personas que lo usan.
+                        </p>
+                        <p>
+                            Trabajo con stacks modernos, pero priorizo siempre los fundamentos:
+                            estructuras limpias, contratos claros entre capas y decisiones que
+                            sigan teniendo sentido en seis meses.
+                        </p>
+                    </div>
+                    <aside class="stack">
+                        <header class="stack-head">
+                            <span class="stack-title">stack/</span>
+                            <span class="stack-count">06</span>
                         </header>
-                        <p>Gestión integral de usuarios con base de datos. Arquitectura en capas para mayor
-                            escalabilidad.</p>
+                        <ul class="stack-list">
+                            <li><span class="stack-icon"><i class="fab fa-js"></i></span>JavaScript / TypeScript</li>
+                            <li><span class="stack-icon"><i class="fab fa-react"></i></span>React / Next.js</li>
+                            <li><span class="stack-icon"><i class="fab fa-node-js"></i></span>Node.js</li>
+                            <li><span class="stack-icon"><i class="fab fa-python"></i></span>Python</li>
+                            <li><span class="stack-icon"><i class="fas fa-database"></i></span>PostgreSQL / Mongo</li>
+                            <li><span class="stack-icon"><i class="fab fa-docker"></i></span>Docker / Linux</li>
+                        </ul>
+                    </aside>
+                </div>
+            </section>
+
+            <section id="proyectos" class="projects" data-reveal>
+                <h2 class="section-title">
+                    <span class="hash">##</span>
+                    <span>Proyectos</span>
+                    <span class="section-count">03</span>
+                </h2>
+                <div class="grid">
+                    <article class="card" data-tilt data-reveal data-delay="0">
+                        <div class="card-shine" aria-hidden="true"></div>
+                        <div class="card-corner card-corner-tl" aria-hidden="true"></div>
+                        <div class="card-corner card-corner-br" aria-hidden="true"></div>
+                        <header>
+                            <span class="card-number">01/03</span>
+                            <h3>Sistema de Finanzas Personales</h3>
+                        </header>
+                        <p>Gestión integral de usuarios con base de datos. Arquitectura en capas para mayor escalabilidad.</p>
+                        <ul class="tags" aria-label="Tecnologías">
+                            <li>Node</li>
+                            <li>Postgres</li>
+                            <li>Express</li>
+                        </ul>
                         <footer>
-                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
-                                <i class="fas fa-code"></i>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="card-link">
+                                <span>view source</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
                         </footer>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tilt data-reveal data-delay="1">
+                        <div class="card-shine" aria-hidden="true"></div>
+                        <div class="card-corner card-corner-tl" aria-hidden="true"></div>
+                        <div class="card-corner card-corner-br" aria-hidden="true"></div>
                         <header>
-                            <h3>02. Script Automatización</h3>
+                            <span class="card-number">02/03</span>
+                            <h3>Script de Automatización</h3>
                         </header>
                         <p>Herramientas de mantenimiento y backup automatizado para optimizar flujos de trabajo.</p>
+                        <ul class="tags" aria-label="Tecnologías">
+                            <li>Python</li>
+                            <li>Bash</li>
+                            <li>Cron</li>
+                        </ul>
                         <footer>
-                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
-                                <i class="fas fa-code"></i>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="card-link">
+                                <span>view source</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
                         </footer>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tilt data-reveal data-delay="2">
+                        <div class="card-shine" aria-hidden="true"></div>
+                        <div class="card-corner card-corner-tl" aria-hidden="true"></div>
+                        <div class="card-corner card-corner-br" aria-hidden="true"></div>
                         <header>
-                            <h3>03. Portafolio Web</h3>
+                            <span class="card-number">03/03</span>
+                            <h3>Portafolio Web</h3>
                         </header>
                         <p>Sitio web minimalista, semántico y accesible. Diseño enfocado en el contenido.</p>
+                        <ul class="tags" aria-label="Tecnologías">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JS</li>
+                        </ul>
                         <footer>
-                            <a href="https://github.com/thoraldev/thoraldev.github.io" target="_blank"
-                                rel="noopener noreferrer" aria-label="Ver código">
-                                <i class="fas fa-code"></i>
+                            <a href="https://github.com/thoraldev/thoraldev.github.io" target="_blank" rel="noopener noreferrer" class="card-link">
+                                <span>view source</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
                         </footer>
                     </article>
@@ -124,7 +248,13 @@
         </main>
 
         <footer class="site-footer">
-            <p>© 2026 Alejandro Toral.</p>
+            <div class="footer-content">
+                <p>© 2026 Alejandro Toral.</p>
+                <p class="footer-meta">
+                    <span class="prompt-symbol">$</span>
+                    <span>built with care &amp; coffee</span>
+                </p>
+            </div>
         </footer>
     </div>
 
